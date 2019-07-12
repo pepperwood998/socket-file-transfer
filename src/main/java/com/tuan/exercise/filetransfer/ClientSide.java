@@ -47,6 +47,7 @@ public class ClientSide {
         Log.line(fileExt);
         Log.line(Constant.Client.MSG_READ_AND_SEND);
         CustomIO.sendFromStorage(bufInStream, netOutStream, file.length());
+        fileInSream.close();
         Log.line(Constant.Client.MSG_SEND_DONE);
 
         // read server response

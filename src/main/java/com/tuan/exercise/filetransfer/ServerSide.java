@@ -48,6 +48,7 @@ public class ServerSide {
         Log.line(Constant.Server.MSG_READ_AND_SAVE);
         long before = System.nanoTime();
         CustomIO.saveFromNetwork(netInStream, bufOutStream);
+        fileOutStream.close();
         long totalTime = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - before);
 
         Log.line("Total time: " + totalTime + " ms");
